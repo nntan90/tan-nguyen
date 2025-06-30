@@ -1,268 +1,127 @@
-import { Logo } from "@once-ui-system/core";
+import { Text } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  get name() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),
-};
-
-const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
-  {
-    name: "Email",
-    icon: "email",
-    link: `mailto:${person.email}`,
-  },
-];
-
-const home = {
-  path: "/",
-  image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
-  featured: {
-    display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
-  },
-  subline: (
-    <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
-    </>
-  ),
+    firstName: 'Tan',
+    lastName: 'Nguyen',
+    get name() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+    role: 'QA/QC Leader',
+    avatar: '/images/avatar.jpg',
+    location: 'Ho Chi Minh City, Vietnam',
+    languages: ['English', 'Vietnamese']
 };
 
 const about = {
-  path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
-  tableOfContent: {
-    display: true,
-    subItems: false,
-  },
-  avatar: {
-    display: true,
-  },
-  calendar: {
-    display: true,
-    link: "https://cal.com",
-  },
-  intro: {
-    display: true,
-    title: "Introduction",
-    description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
-    ),
-  },
-  work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
-      {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
-    ],
-  },
-  studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
-    institutions: [
-      {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
-  },
-  technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
-    skills: [
-      {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
-  },
-};
-
-const blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
-const work = {
-  path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
-};
-
-const gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
+    title: 'About',
+    description: 'Learn more about who I am, what I do, and what inspires me.',
+    path: '/about',
+    
+    tableOfContent: {
+        display: true,
     },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
+    
+    avatar: {
+        display: true,
     },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
+    
+    calendar: {
+        display: true,
+        link: 'mailto:nguyenngoctan1990@gmail.com'
     },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
+    
+    intro: {
+        display: true,
+        title: 'Introduction',
+        description: (
+            <>
+                <Text>
+                    QA/QC Leader with <strong>10+ years experience</strong> in Information Technology, 
+                    specializing in IT support, manual testing, and automation testing. Currently 
+                    leading quality assurance for large-scale data pipeline projects at FPT Software.
+                </Text>
+                <Text>
+                    Over <strong>4 years of team leadership experience</strong>, managing cross-functional 
+                    teams up to 26 members across multiple high-impact projects. Expert in data pipeline 
+                    testing, covering ETL/ELT processes, data validation, and quality assurance across 
+                    large-scale database environments processing <strong>30+ schemas and 500+ tables</strong>.
+                </Text>
+                <Text>
+                    Successfully deployed solutions for <strong>10+ customers</strong> with proven track 
+                    record in various domains including Data pipeline, Migration data, SAP, ERP, 
+                    E-commerce, Fulfilment service, and Healthcare. Applied AI approaches to optimize 
+                    test case design and ensure consistency in quality assurance processes.
+                </Text>
+            </>
+        )
     },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+    
+    work: {
+        display: true,
+        title: 'Work Experience',
+        experiences: [
+            {
+                company: 'FPT Software',
+                timeframe: 'March 2024 - Present',
+                role: 'QC Leader',
+                achievements: [
+                    <>Led quality assurance for <strong>large-scale data pipeline and migration project</strong> processing over 30 schemas and 500 tables for top Japanese airline</>,
+                    <>Managed cross-functional team of <strong>26 members</strong> (2 PM, 2 Comtor, 11 DEV, 10 QC, 1 QA) ensuring high-quality complex data integration and transformation</>,
+                    <>Successfully deployed solutions for <strong>10+ customers</strong> with 5 successful go-lives in 2023, improving overall product quality through cross-functional collaboration</>,
+                    <>Enhanced team management through strategic application of <strong>Microsoft tools ecosystem</strong> including Teams, SharePoint, Approvals, Power Automate, Power BI</>,
+                    <>Implemented comprehensive testing automation using <strong>Ranorex for UI testing</strong> and Postman for API testing with E2E automation flows</>,
+                    <>Trained team members in testing mindset and skills including test case development, execution, and defect reporting methodologies</>
+                ],
+                images: []
+            },
+            {
+                company: 'Laidon Company',
+                timeframe: 'March 2023 - March 2024',
+                role: 'QA/QC Leader',
+                achievements: [
+                    <>Led QA team for <strong>SimpleMDG (Master Data Governance)</strong> solution, simplifying SAP master data management through seamless integration</>,
+                    <>Managed quality control procedures across <strong>10+ customers</strong> with team of 70 members (4 PM, 17 BA, 23 DEV, 11 ABAP, 15 QC)</>,
+                    <>Hands-on experience with <strong>AWS services and Apache Airflow</strong> for testing orchestrating ETL/ELT workflows, optimizing reliability and efficiency</>,
+                    <>Verified ETL/ELT processes and validated data integrity on <strong>Snowflake and Amazon Redshift</strong> databases, ensuring accuracy across all migration stages</>,
+                    <>Applied <strong>AI approaches</strong> to summary requirements, research technical solutions, enhance test case design and review syntax, improving coverage and efficiency</>,
+                    <>Designed comprehensive test strategies for data projects including estimation of testing effort and timelines across multiple small projects</>
+                ],
+                images: []
+            },
+            {
+                company: 'Baspro Company',
+                timeframe: 'October 2020 - March 2023',
+                role: 'QA/QC Leader',
+                achievements: [
+                    <>Built integrated <strong>e-commerce platform ecosystem</strong> with omni-channel management, automated order fulfillment, and logistics services</>,
+                    <>Managed quality control for multiple projects: <strong>SC, FOS, DH, LMD, DMS, WMS, CRM, POS, DVGo</strong> with team of 15 members</>,
+                    <>Successfully launched product handling <strong>6000+ orders/day</strong> within 8 months, establishing integrated platform for e-commerce sellers</>,
+                    <>Implemented <strong>API automation testing</strong> using Postman tool and performed load testing with K6 for performance optimization</>,
+                    <>Mentored team of 2 QC members through instruction, coaching and providing real-time on-the-job experiences</>,
+                    <>Collaborated with partners to conduct End-to-End testing before system integration, ensuring seamless platform connectivity</>
+                ],
+                images: []
+            },
+            {
+                company: 'TMA Solutions',
+                timeframe: 'May 2016 - October 2020',
+                role: 'QA/QC Engineer',
+                achievements: [
+                    <>Delivered quality assurance for <strong>Vibrent Health</strong> - US government healthcare booking system allowing participants to book online health check-ups</>,
+                    <>Earned multiple <strong>Star Performer Team Awards</strong> (Q2-2019, Q3-2018, Q2-2018) and Good Performer recognition (Q4-2018)</>,
+                    <>Gained expertise in <strong>automation testing</strong> with Java, Selenium, TestNG, Maven, Cucumber, Jenkins for 6 months as Automation Tester role</>,
+                    <>Managed automation team of <strong>3 members</strong> with comprehensive planning, task assignment, code review, and stakeholder reporting</>,
+                    <>Worked on diverse projects including <strong>Iron Mountain, Moso, Shearwater, Rank Media</strong> across various platforms and testing methodologies</>,
+                    <>Executed comprehensive testing including Functional, Non-Functional, Regression, API testing using Postman and JMeter tools</>
+                ],
+                images: []
+            },
+            {
+                company: 'VNG Corp',
+                timeframe: 'February 2012 - April 2016',
+                role: 'IT Support',
+                achievements: [
+                    <>Provided comprehensive <strong>end-user support</strong> including networking, troubleshooting, installation, operation, and maintenance services</>,
+                    <>Trained new IT employees and documented user guides for efficient knowledge transfer and operational consistency</>,
+                    <>Deployed and operated <strong>G Suite and SCCM</strong> systems, ensuring smooth IT infrastructure management</>,
+                    <>Reported directly to IT manager with regular status updates and maintained high service quality standards
